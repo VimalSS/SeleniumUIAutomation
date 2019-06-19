@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry including="**/*.java" kind="src" output="target/classes" path="src">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/MonteScreenRecorder.jar"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/org.apache.commons.io.jar.zip"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/org.apache.commons.io.jar/org.apache.commons.io.jar"/>
+	<classpathentry kind="lib" path="C:/Automation/Softwares/java-client-7.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Automation/Softwares/java-client-7.0.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Automation/Softwares/java-client-7.0.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/chromedriver_win32.zip"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/commons-io-2.6-src.zip"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/geckodriver-v0.23.0-win64.zip"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/IEDriverServer_Win32_3.14.0.zip"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/IEDriverServer_x64_3.14.0.zip"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/Automation/Selenium/selenium-java-3.141.59/client-combined-3.141.59.jar"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/Automation/Selenium/selenium-java-3.141.59/client-combined-3.141.59-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/Automation/Selenium/selenium-java-3.141.59/libs/byte-buddy-1.8.15.jar"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/Automation/Selenium/selenium-java-3.141.59/libs/commons-exec-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/Automation/Selenium/selenium-java-3.141.59/libs/guava-25.0-jre.jar"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/Automation/Selenium/selenium-java-3.141.59/libs/okhttp-3.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/Automation/Selenium/selenium-java-3.141.59/libs/okio-1.14.0.jar"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/Automation/Apache/org.apache.commons.io.jar/org.apache.commons.io.jar"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/Automation/Cucumber/cucumber-core-4.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/Automation/Cucumber/cucumber-java-4.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/Automation/Cucumber/cucumber-junit-4.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/Automation/Cucumber/cucumber-jvm-deps-1.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/Automation/Cucumber/gherkin-6.0.14.jar"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/Automation/Cucumber/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/Automation/Cucumber/mockito-all-1.10.19.jar"/>
+	<classpathentry kind="lib" path="C:/Vimal/Software/Automation/Cucumber/mockito-core-2.21.0.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

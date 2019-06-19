@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Test-method Suite]" parallel="methods">
+  <test thread-count="2" name="Test-method test(failed)" parallel="methods">
+    <classes>
+      <class name="com.Selenium.Automation.BestBuy">
+        <methods>
+          <include name="BestBuy_Search_Test"/>
+          <include name="StartUp"/>
+        </methods>
+      </class> <!-- com.Selenium.Automation.BestBuy -->
+    </classes>
+  </test> <!-- Test-method test(failed) -->
+</suite> <!-- Failed suite [Test-method Suite] -->
