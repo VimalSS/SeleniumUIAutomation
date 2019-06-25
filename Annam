@@ -1,0 +1,129 @@
+package com.experitest.auto;
+
+import java.net.URL;
+import java.util.logging.Level;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.remote.AndroidMobileCapabilityType;
+import io.appium.java_client.remote.MobileCapabilityType;
+
+
+public class AndroidDemoTest extends BaseTest {
+	private String reportDirectory = "reports";
+    private String reportFormat = "xml";
+    private String testName = "Untitled";
+    protected AndroidDriver<AndroidElement> driver = null;
+    DesiredCapabilities dc = new DesiredCapabilities();
+    
+	
+	@BeforeMethod
+	@Parameters("deviceQuery")
+	public void setUp(@Optional("@os='android'") String deviceQuery) throws Exception{
+		init(deviceQuery);
+		    dc.setCapability("reportDirectory", reportDirectory);
+	        dc.setCapability("reportFormat", reportFormat);
+	        dc.setCapability("testName", testName);
+	        dc.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
+	        dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "sinettechnologies.foodcourt");
+	        dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".general_ui.Splash");
+	        dc.setCapability("instrumentApp", true);
+	        driver = new AndroidDriver<>(new URL("http://localhost:4723/wd/hub"), dc);
+	        driver.setLogLevel(Level.INFO);
+	}
+	
+	@Test
+	public void test() throws InterruptedException{
+		
+		//To login with customer credentials
+		Thread.sleep(3000);
+		driver.findElement(By.id("img4")).click();
+		Thread.sleep(2000);
+	    driver.findElement(By.id("email")).sendKeys("customer2@gmail.com");
+		Thread.sleep(2000);
+	    driver.findElement(By.id("password")).sendKeys("123456");
+		Thread.sleep(2000);
+	    driver.findElement(By.id("button")).click();
+		
+	    
+		//To select hotel and food
+	    Thread.sleep(3000);
+	    driver.findElement(By.xpath("//*[@id='img' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[@text='Flat 50 off'] and (./preceding-sibling::* | ./following-sibling::*)[@text='Al Ameen - Tambaram']]]")).click();
+	    Thread.sleep(2000);
+	    driver.findElement(By.xpath("//*[@id='category_img' and (./preceding-sibling::* | ./following-sibling::*)[@text='South Indian Food']]")).click();
+	    Thread.sleep(2000);
+	    driver.findElement(By.xpath("//*[@id='category_img' and (./preceding-sibling::* | ./following-sibling::*)[@text='Tiffin']]")).click();
+	    Thread.sleep(2000);
+	    driver.findElement(By.xpath("//*[@text='ADD' and ./parent::*[./parent::*[(./preceding-sibling::* | ./following-sibling::*)[./*[@text='Onion Rava Dosa']]]]]")).click();
+	    Thread.sleep(2000);
+	    driver.findElement(By.xpath("//*[@text='ADD' and ./parent::*[./parent::*[(./preceding-sibling::* | ./following-sibling::*)[./*[@text='Appam: Rice and Coconut Pancake']]]]]")).click();
+	    Thread.sleep(2000);
+	    driver.findElement(By.xpath("//*[@text='+' and @width>0 and ./parent::*[./parent::*[./parent::*[./parent::*[(./preceding-sibling::* | ./following-sibling::*)[./*[@text='Appam: Rice and Coconut Pancake']]]]]]]")).click();
+	    Thread.sleep(2000);
+	    driver.findElement(By.xpath("//*[@text='+' and @width>0 and ./parent::*[./parent::*[./parent::*[./parent::*[(./preceding-sibling::* | ./following-sibling::*)[./*[@text='Appam: Rice and Coconut Pancake']]]]]]]")).click();
+	    Thread.sleep(2000); 
+	    driver.findElement(By.xpath("//*[@text='-' and @width>0 and ./parent::*[./parent::*[./parent::*[./parent::*[(./preceding-sibling::* | ./following-sibling::*)[./*[@text='Appam: Rice and Coconut Pancake']]]]]]]")).click();
+	    
+	    
+	    //To check the order and "add or Delete" the food 
+	    Thread.sleep(2000);
+	    driver.findElement(By.id("img3")).click();
+	    Thread.sleep(2000);
+	    driver.findElement(By.xpath("//*[@text='+' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[./*[./*[@text='1']]]]]")).click();
+	    Thread.sleep(2000);
+	    driver.findElement(By.xpath("//*[@id='deleteimage_button' and ./parent::*[./parent::*[(./preceding-sibling::* | ./following-sibling::*)[./*[@text='Appam: Rice and Coconut Pancake']]]]]")).click();
+	    Thread.sleep(2000);
+	    driver.findElement(By.id("button1")).click();
+	    Thread.sleep(2000);
+        driver.findElement(By.id("submit_id")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.id("add_btn")).click();
+        
+        
+        //To create the delivery address
+        Thread.sleep(2000);
+        driver.findElement(By.id("delivery_address_name")).sendKeys("Mukesh");
+        Thread.sleep(2000);
+        driver.findElement(By.id("delivery_mob_no")).sendKeys("9874563210");
+        Thread.sleep(2000);
+        driver.findElement(By.id("delivery_address1")).sendKeys("opp to vijayanager busstand");
+        Thread.sleep(2000);
+        driver.findElement(By.id("delivery_address2")).sendKeys("velachery");
+        Thread.sleep(2000);
+        driver.findElement(By.id("delivery_pincode")).sendKeys("6360017");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@text='Submit']")).click();
+       
+        
+       
+	    //To selecting the delivery address and submit the order
+	    Thread.sleep(2000);
+      driver.findElement(By.id("delivery_radio_btn")).click();  
+	    Thread.sleep(3000);
+	    driver.findElement(By.id("go_btn")).click();
+	    Thread.sleep(3000);
+	    driver.findElement(By.id("submit_id")).click();
+
+	    
+	    //To see the order list
+	    driver.findElement(By.id("img4")).click();
+	    Thread.sleep(2000);
+      driver.findElement(By.id("orderlist")).click();
+      Thread.sleep(2000);
+  
+	}
+	
+	@AfterMethod
+	public void tearDown(){
+		//driver.quit();
+	}
+	
+}
