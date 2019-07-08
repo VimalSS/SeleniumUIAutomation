@@ -11,6 +11,8 @@ import java.net.URL;
 import java.net.MalformedURLException;
 import java.util.logging.Level;
 import java.lang.reflect.Method;
+import POM.Annamm.Annamm_LoginPage;
+
 
 public class Annamm_Login {
   private String reportDirectory = "reports";
@@ -25,7 +27,9 @@ public class Annamm_Login {
       dc.setCapability("reportDirectory", reportDirectory);
       dc.setCapability("reportFormat", reportFormat);
       dc.setCapability("testName", testName);
-      dc.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
+      dc.setCapability(MobileCapabilityType.UDID, "9be9702c");
+
+//      dc.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
       dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "sinettechnologies.foodcourt");
       dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".general_ui.Splash");
       dc.setCapability("instrumentApp", true);
@@ -34,17 +38,24 @@ public class Annamm_Login {
   }
 
   @Test
-  public void Annamm_Invalid_Login_SmokeTest(Method method) {
-      //driver.findElement(By.xpath("//*[@text='OK']")).click();
+  public void Annamm_Invalid_Login_SmokeTest(Method method)  {
+	  
+	  System.out.println("Test Case - '" + method.getName() + "' Started...");
+      
+	  //driver.findElement(By.xpath("//*[@text='OK']")).click();
       //driver.findElement(By.xpath("//*[@text='Never ask again']")).click();
       //driver.findElement(By.xpath("//*[@text='Deny']")).click();
-      driver.findElement(By.xpath("//*[@id='txt4']")).click();
-      driver.findElement(By.xpath("//*[@id='email']")).sendKeys("vimal");
-      driver.findElement(By.xpath("//*[@id='password']")).sendKeys("test");
-      //driver.findElement(By.xpath("//*[@hint='Email']")).sendKeys("vimal");
-      //driver.findElement(By.xpath("//*[@hint='Password']")).sendKeys("test");
-      driver.findElement(By.xpath("//*[@text='Submit']")).click();
+      
+      Annamm_LoginPage.txt_Login(driver).click();
+      
+      Annamm_LoginPage.txtbox_Login(driver).sendKeys("vimal");
+      
+      Annamm_LoginPage.txtbox_Password(driver).sendKeys("test");
+          
+      Annamm_LoginPage.btn_Submit(driver).click();
+      
       System.out.println("Successfully Clicked the Submit button in login page");
+      
       System.out.println("Test Case - '" + method.getName() + "' Passed...");
   }
 

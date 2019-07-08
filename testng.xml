@@ -12,6 +12,7 @@
       <class name=".BestBuySauceLabsPOM"/>
       <class name="com.Selenium.Automation.BestBuy"/>
       <class name=".DataProviderClass"/>
+      <class name="com.Selenium.Automation.Annamm_Login"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
