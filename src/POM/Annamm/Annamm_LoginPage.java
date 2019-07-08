@@ -8,7 +8,7 @@ public class Annamm_LoginPage
 
 		public static WebElement element = null;
 		
-		//  Login page text link
+		///  Login page text link
 		public static WebElement txt_Login(WebDriver driver) 
 		{
 			element = driver.findElement(By.xpath("//*[@id='txt4']"));
