@@ -8,7 +8,7 @@ public class Annamm_LoginPage
 
 		public static WebElement element = null;
 		
-		///  Login page text link
+		//  Login page text link
 		public static WebElement txt_Login(WebDriver driver) 
 		{
 			element = driver.findElement(By.xpath("//*[@id='txt4']"));
@@ -30,7 +30,7 @@ public class Annamm_LoginPage
 			return element;
 		}
 		
-		///  Submit button
+		//  Submit button
 		public static WebElement btn_Submit(WebDriver driver) 
 		{
 			element = driver.findElement(By.xpath("//*[@text='Submit']"));
