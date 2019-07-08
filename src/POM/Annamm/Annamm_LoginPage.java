@@ -30,7 +30,7 @@ public class Annamm_LoginPage
 			return element;
 		}
 		
-		//  Submit button
+		///  Submit button
 		public static WebElement btn_Submit(WebDriver driver) 
 		{
 			element = driver.findElement(By.xpath("//*[@text='Submit']"));
